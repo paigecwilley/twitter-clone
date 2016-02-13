@@ -49,6 +49,9 @@ body {
 	cursor: pointer;
 	border-radius: 4px;
 }
+.button-enabled {
+	display:inline-block;
+}
 .button:disabled {
 	color: #777;
 	text-shadow: 0 1px 1px rgba(255,255,255,.75);
@@ -127,11 +130,19 @@ body {
 		margin-bottom: 1em;
 		box-sizing: border-box;
 	}
+
+	.tweet-compose.tweet-write {
+		height:5em;
+	}
 		#tweet-controls {
 			text-align: right;
 			float:right;
 			padding-bottom: 5px;
 			display:none;
+		}
+
+		.tweet-controls-write {
+			display:inline-block;
 		}
 			#tweet-controls div {
 				display: inline-block;
