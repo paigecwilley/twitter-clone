@@ -31,6 +31,9 @@ $('.tweet-compose').keyup(function(){
     	if(new_count < 0) {
     		$('#tweet-submit').attr('disabled', 'true');
     	}
+    	else if(new_count >= 0){
+    		$('#tweet-submit').removeAttr('disabled');
+    	}
     }
 
     else if(new_count > 10) {
@@ -39,5 +42,37 @@ $('.tweet-compose').keyup(function(){
 
 })
 
-})
+$('#tweet-submit').click(function(){
+	var tweetWords = $('.tweet-compose').val();
+	var newTweet = $('.tweet').clone();
+	var myName = $('#myName').html();
+	var picture = $('#twitterpic').attr('src');
+
+	newTweet.find('.tweet-text').html(tweetWords);
+	newTweet.find('.fullname').html('Paige');
+	newTweet.find('.username').html('@paige');
+	newTweet.find('.avatar').attr('src', 'img/alagoon.jpg');
+
+	newTweet.prependTo('#stream');
+	$('textarea').val('');
+	$('#char-count').text('140');
+});
+
+
+$('.tweet-actions').hide();
+$('.tweet').mouseenter(function(){
+	$(this).find('.tweet-actions').show();
+}).mouseleave(function(){
+	$(this).find('.tweet-actions').hide();
+});
+
+// $('.tweet').click(function(){
+// 	$(this).find('.retweets').css('display', 'inline-block');
+// 	$(this).find('.favorites').css('display', 'inline-block');
+// 	$(this).find('.users-interact').css('display', 'inline-block');
+// });
+
+
+
+});
 
