@@ -129,6 +129,9 @@ body {
 	}
 		#tweet-controls {
 			text-align: right;
+			float:right;
+			padding-bottom: 5px;
+			display:none;
 		}
 			#tweet-controls div {
 				display: inline-block;
